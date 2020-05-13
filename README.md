@@ -3,7 +3,7 @@ LaTex template for Sharif University of Technology Computer Architecture Group.
 This template uses the **XePersian** package and **B Nazanin** Font.
 
 ## Notice!
-Use **TexStudio** and **TeX Live** for convenience.
+Use **TexStudio** and **TeX Live 2019** for convenience.
 
 ## Built With
 * XeTeX
