@@ -1,0 +1,192 @@
+
+\documentclass[oneside, 10pt, a4paper]{article}
+\usepackage[usenames]{color}\color[rgb]{0.000,0.000,0.000} %used for font color
+\usepackage{color}
+
+\usepackage{algorithmicx}
+\usepackage{graphicx} 
+\usepackage{array}
+\usepackage[table]{xcolor}
+\usepackage{subfigure}
+\usepackage{url}
+\usepackage{comment}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{cite}
+\usepackage{multirow}
+\usepackage{adjustbox}
+\usepackage{fancybox}
+\usepackage{paralist}
+\usepackage{setspace}  
+\usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage{booktabs}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\newcounter{tablerow}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+\usepackage{pifont}
+\newcommand{\crefrangeconjunction}{--}
+\crefformat{tablerow}{#2#1#3}
+\crefmultiformat{tablerow}{#2#1#3}%
+{ و~#2#1#3}%
+{, #2#1#3}%
+{ و~#2#1#3}
+
+\renewcommand{\labelitemi}{\scriptsize$\blacksquare$} 
+
+%\usepackage[style=ieee]{biblatex}
+%\bibliography{resources}
+
+%\doublespacing
+\usepackage{endnotes}
+\usepackage{tikz}
+\usetikzlibrary{mindmap,trees}
+\usetikzlibrary{decorations.text}
+%\usepackage[top=29mm, bottom=29mm, left=19mm, right=19mm]{geometry}
+\usepackage[top=1.1in, bottom=1.1in, left=0.75in, right=0.75in]{geometry}
+\usepackage{xepersian}
+\NewDocumentCommand{\rot}{O{60} O{1em} m}{\makebox[#2][l]{\rotatebox{#1}{#3}}}%
+\newtheorem{definition}{تعريف}
+\newtheorem{theorem}{قضيه}
+\defpersianfont\keywordsfont[Scale=1.2]{B Nazanin}
+\defpersianfont\titlefont[Scale=1.22]{B Nazanin}
+\defpersianfont\secondtitlefont[Scale=1]{B Nazanin} %1.4
+\defpersianfont\secondtitlelatinfont[Scale=1.32]{Times New Roman}
+
+\settextfont[Scale=1.1]{B Nazanin}
+%\settextfont[Scale=1.1]{XB Niloofar}
+\setlatintextfont[Scale=0.9]{Times New Roman}\setdigitfont[Scale=1]{B Nazanin}
+%\setromantextfont[Scale=1.2]{XB Niloofar} 
+
+\defpersianfont\sectionsfont[Scale=0.9]{B Nazanin}
+\defpersianfont\captionsfont[Scale=1.0]{B Nazanin}
+
+%\let\oldcaption=\caption
+%\renewcommand{\caption}[1]{{\bf \captionsfont \oldcaption{#1}}}
+
+\usepackage{sectsty}
+\allsectionsfont{\sectionsfont}
+
+
+\linespread{1.4} %line space
+%\setstretch{1}
+
+\setlength{\parindent}{5pt} %The indent of the paragraph first line
+\setlength{\parskip}{5pt} %Befor paragraph space
+
+\setlength{\columnsep}{6mm}
+%\let\footnote=\endnote
+%\renewcommand{\notesname}{واژه‌نامه}
+\renewcommand\refname{\raggedleft \rl{منابع و مراجع}}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\def\InE{\begingroup\beginL\latinfont}
+\def\EnE{\endL\endgroup} 
+\def\InF{\begingroup\beginR\persianfont}
+\def\EnF{\endR\endgroup}
+\newcommand{\IE}[1]{\lr{#1}}
+\newcommand{\IP}[1]{\rl{#1}} 
+\newcommand{\IF}[1]{\rl{#1}}
+\def\persiandash{\rl{-}}
+%\defpersianfont\myfont{XB Niloofar}
+\newcommand{\efootnote}[1]{\endnote{\lr{#1}}}
+%\newcommand{\ecfootnote}[1]{}
+
+\let\oldemph=\emph
+\renewcommand{\emph}[1]{''\oldemph{#1}``}
+\definecolor{mycolor7}{RGB}{204,255,102}
+\definecolor{mycolor2}{RGB}{0,255,102}
+\definecolor{mycolor3}{RGB}{255,255,153}
+\definecolor{mycolor4}{RGB}{204,153,255}
+\definecolor{mycolor5}{RGB}{255,204,153}
+\definecolor{mycolor6}{RGB}{255,153,153}
+\definecolor{mycolor}{RGB}{102,255,255}
+
+%\setlength{\textheight}{24cm}
+%\setlength{\oddsidemargin}{0cm}
+%\addtolength{\topmargin}{-12mm}
+
+%%%%%%%%%%%Circular%%%%%%%%%%
+%\newcommand*{\mytextstyle}{\sffamily\Large\bfseries\color{black!85}}
+\newcommand{\arcarrow}[8]{%
+	% inner radius, middle radius, outer radius, start angle,
+	% end angle, tip protusion angle, options, text
+	\pgfmathsetmacro{\rin}{#1}
+	\pgfmathsetmacro{\rmid}{#2}
+	\pgfmathsetmacro{\rout}{#3}
+	\pgfmathsetmacro{\astart}{#4}
+	\pgfmathsetmacro{\aend}{#5}
+	\pgfmathsetmacro{\atip}{#6}
+	\fill[#7] (\astart:\rin) arc (\astart:\aend:\rin)
+	-- (\aend+\atip:\rmid) -- (\aend:\rout) arc (\aend:\astart:\rout)
+	-- (\astart+\atip:\rmid) -- cycle;
+	\path[font = \sffamily, decoration = {text along path, text = {|\large\color{black}|#8},
+		text align = {align = center}, raise = -0.5ex}, decorate]
+	(\astart+\atip:\rmid) arc (\astart+\atip:\aend+\atip:\rmid);
+}
+%%%%%%%%%%%Circular%%%%%%%%%%
+
+
+%\renewcommand{\thechapter}{\tartibi{chapter}}
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\arabic{section}-\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{section}-\arabic{subsection}-\arabic{subsubsection}}
+
+\newcommand{\authormajor}{رایانش امن}
+\newcommand{\thesistitlepersian}{ارائه یک روش تصدیق از راه دور برای سامانه‌های کنترل صنعتی}
+\newcommand{\thesistitlelatin}{Remote Attestation Technique for Industrial Control Systems}
+\newcommand{\authorname}{محسن صالحی}
+\newcommand{\studentid}{97213252}
+%\footnote{
+%شماره‌ي دانشجويي: 97213252، آدرس:
+%\lr{mssalehi@ce.sharif.edu}
+%} 
+
+\newcommand{\advisorprofname}{دکتر سیاوش بیات سرمدی} %persian:   استاد راهنما
+\newcommand{\examinerprofname}{دکتر مرتضی امینی} %persian:   استاد ممتحن داخلي يا استاد مشاور
+
+\input{title}
+
+\begin{document} 
+\maketitle 
+
+\input{abstract}
+
+%\newline\newline
+
+ 
+
+
+
+%=========== Regular chapters ===============
+%\cleardoublepage % terminates the current paragraph and page, the same way as a report document.
+\setlatintextfont[Scale=0.8]{Times New Roman} 
+\linespread{.8} %line space
+\renewcommand{\url}[1]{\underline{#1}}
+
+%\bibliographystyle{IEEEtran}
+%\bibliographystyle{is-unsrt}
+\bibliographystyle{ieeetr-fa}
+%\bibliographystyle{amsplain}
+\newpage
+\latin
+\bibliography{resources}
+
+\persian
+\linespread{1} %line space
+
+%\theendnotes
+\section*{واژه‌نامه}
+{
+	\renewcommand{\section}[2]{} % disable the automatic chapter
+	\begin{RTL}
+		\begin{multicols}{3}
+			\theendnotes
+		\end{multicols}
+	\end{RTL}
+}
+\end{document}
+\end{document}

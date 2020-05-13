@@ -1,0 +1,20 @@
+\@doanenote {1}{1}
+macro:->\lr
+{Exynos4415}
+\@endanenote 
+\@doanenote {2}{2}
+macro:->\lr
+{ARM}
+\@endanenote 
+\@doanenote {3}{3}
+macro:->\lr
+{Scale}
+\@endanenote 
+\@doanenote {4}{4}
+macro:->\lr
+{Infeasible}
+\@endanenote 
+\@doanenote {5}{5}
+macro:->\lr
+{Benchmark}
+\@endanenote 

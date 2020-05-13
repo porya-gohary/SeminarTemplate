@@ -1,0 +1,70 @@
+% Circular arrows with text
+% Author: Tom Bombadil
+
+\documentclass[tikz,border=10pt]{standalone}
+\usetikzlibrary{decorations.text}
+\usepackage{xepersian}
+%\newcommand*{\mytextstyle}{\sffamily\Large\bfseries\color{black!85}}
+\newcommand{\arcarrow}[8]{%
+% inner radius, middle radius, outer radius, start angle,
+% end angle, tip protusion angle, options, text
+  \pgfmathsetmacro{\rin}{#1}
+  \pgfmathsetmacro{\rmid}{#2}
+  \pgfmathsetmacro{\rout}{#3}
+  \pgfmathsetmacro{\astart}{#4}
+  \pgfmathsetmacro{\aend}{#5}
+  \pgfmathsetmacro{\atip}{#6}
+  \fill[#7] (\astart:\rin) arc (\astart:\aend:\rin)
+       -- (\aend+\atip:\rmid) -- (\aend:\rout) arc (\aend:\astart:\rout)
+       -- (\astart+\atip:\rmid) -- cycle;
+  \path[font = \sffamily, decoration = {text along path, text = {|\mytextstyle|#8},
+    text align = {align = center}, raise = -0.5ex}, decorate]
+    (\astart+\atip:\rmid) arc (\astart+\atip:\aend+\atip:\rmid);
+}
+
+
+\begin{document}
+	\usepackage{xepersian}
+\begin{tikzpicture}
+  \arcarrow{2}{2}{4}{0}{90}{0}{red,
+  	draw = red!50!black, very thick}{ }
+	  \arcarrow{4}{4}{5}{0}{45}{0}{green,
+	  	draw = red!50!black, very thick}{یسی }
+			  \arcarrow{5}{5}{6}{0}{22.5}{0}{green,
+			  	draw = red!50!black, very thick}{یسی }
+			  \arcarrow{5}{5}{6}{22.5}{45}{0}{green,
+			  	draw = red!50!black, very thick}{یسی }  
+	  \arcarrow{4}{4}{5}{45}{90}{0}{red,
+	  	draw = red!50!black, very thick}{یسی }
+			    \arcarrow{5}{5}{6}{45}{67.5}{0}{green,
+			    	draw = red!50!black, very thick}{یسی }
+			    \arcarrow{5}{5}{6}{67.5}{90}{0}{green,
+			    	draw = red!50!black, very thick}{یسی }
+			    
+%90-180			    
+	\arcarrow{2}{2}{4}{90}{180}{0}{red,
+		draw = red!50!black, very thick}{یسی }
+		\arcarrow{4}{4}{6}{90}{135}{0}{red,
+			draw = red!50!black, very thick}{یسی }
+		\arcarrow{4}{4}{6}{135}{180}{0}{red,
+			draw = red!50!black, very thick}{یسی }
+
+
+%180-270			    
+\arcarrow{2}{2}{4}{180}{270}{0}{red,
+	draw = red!50!black, very thick}{یسی }
+	\arcarrow{4}{4}{6}{180}{225}{0}{red,
+		draw = red!50!black, very thick}{یسی }
+	\arcarrow{4}{4}{6}{225}{270}{0}{red,
+		draw = red!50!black, very thick}{یسی }
+	
+%270-360			    
+\arcarrow{2}{2}{4}{270}{360}{0}{red,
+	draw = red!50!black, very thick}{یسی }
+\arcarrow{4}{4}{6}{270}{315}{0}{red,
+	draw = red!50!black, very thick}{یسی }
+\arcarrow{4}{4}{6}{315}{360}{0}{red,
+	draw = red!50!black, very thick}{یسی }	
+ 
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,161 @@
+\@doanenote {1}
+macro:->\lr
+{Embedded
+Systems}
+\@endanenote 
+\@doanenote {2}
+macro:->\lr
+{Mixed-Criticality}
+\@endanenote 
+\@doanenote {3}
+macro:->\lr
+{Avionics}
+\@endanenote 
+\@doanenote {4}
+macro:->\lr
+{Automations}
+\@endanenote 
+\@doanenote {5}
+macro:->\lr
+{Criticality
+Level}
+\@endanenote 
+\@doanenote {6}
+macro:->\lr
+{Failure}
+\@endanenote 
+\@doanenote {7}
+macro:->\lr
+{Dual-Criticality}
+\@endanenote 
+\@doanenote {8}
+macro:->\lr
+{High-Criticality
+Tasks}
+\@endanenote 
+\@doanenote {9}
+macro:->\lr
+{Low-Criticality
+Tasks}
+\@endanenote 
+\@doanenote {10}
+macro:->\lr
+{Quality
+of
+Service}
+\@endanenote 
+\@doanenote {11}
+macro:->\lr
+{Real-Time}
+\@endanenote 
+\@doanenote {12}
+macro:->\lr
+{Worst
+Case
+Execution
+Time}
+\@endanenote 
+\@doanenote {13}
+macro:->\lr
+{Schedulability}
+\@endanenote 
+\@doanenote {14}
+macro:->\lr
+{pessimistic}
+\@endanenote 
+\@doanenote {15}
+macro:->\lr
+{Utilization}
+\@endanenote 
+\@doanenote {16}
+macro:->\lr
+{Task
+Model}
+\@endanenote 
+\@doanenote {17}
+macro:->\lr
+{Aperiodic}
+\@endanenote 
+\@doanenote {18}
+macro:->\lr
+{Periodic}
+\@endanenote 
+\@doanenote {19}
+macro:->\lr
+{Sporadic}
+\@endanenote 
+\@doanenote {20}
+macro:->\lr
+{Directed
+Acyclic
+Graph
+(DAG)}
+\@endanenote 
+\@doanenote {21}
+macro:->\lr
+{Certificate}
+\@endanenote 
+\@doanenote {22}
+macro:->\lr
+{Validate}
+\@endanenote 
+\@doanenote {23}
+macro:->\lr
+{Normal
+Execution
+Mode}
+\@endanenote 
+\@doanenote {24}
+macro:->\lr
+{Overrun}
+\@endanenote 
+\@doanenote {25}
+macro:->\lr
+{Critical
+Execution
+Mode}
+\@endanenote 
+\@doanenote {26}
+macro:->\lr
+{Schedulable}
+\@endanenote 
+\@doanenote {27}
+macro:->\lr
+{Fault-Tolertant}
+\@endanenote 
+\@doanenote {28}
+macro:->\lr
+{Permanent}
+\@endanenote 
+\@doanenote {29}
+macro:->\lr
+{Transient}
+\@endanenote 
+\@doanenote {30}
+macro:->\lr
+{Intermittent}
+\@endanenote 
+\@doanenote {31}
+macro:->\lr
+{Redundancy}
+\@endanenote 
+\@doanenote {32}
+macro:->\lr
+{N-Modular
+Redundancy}
+\@endanenote 
+\@doanenote {33}
+macro:->\lr
+{Fault-detection}
+\@endanenote 
+\@doanenote {34}
+macro:->\lr
+{Fault
+Masking}
+\@endanenote 
+\@doanenote {35}
+macro:->\lr
+{Checkpointing
+with
+roll-recovery}
+\@endanenote 

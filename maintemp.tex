@@ -1,0 +1,219 @@
+%\documentclass[oneside, 11pt, a4paper]{article}
+\documentclass[a4paper,11pt]{article}
+
+%\usepackage{algorithmicx}
+%\usepackage[linesnumbered,lined,boxed,commentsnumbered]{algorithm2e}
+\usepackage[utf8]{inputenc}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{graphicx} 
+\usepackage{array}
+\usepackage[table,xcdraw]{xcolor}
+%\usepackage{subfigure}
+\usepackage{url}
+\usepackage{comment}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{pifont}
+%\usepackage{cite}
+\usepackage{multirow}
+\usepackage{fancybox}
+\usepackage{paralist}
+\usepackage{setspace}  
+\usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage{fontspec}
+\usepackage{caption}
+\newcounter{tablerow}
+\usepackage{diagbox}
+\usepackage{chngcntr}
+\usepackage{relsize}
+\usepackage{capt-of}
+\usepackage{booktabs}
+\usepackage{varwidth}
+\usepackage{lipsum}
+\newsavebox\tmpbox
+\usepackage{amssymb}
+\usepackage{endnotes}
+\usepackage{lipsum}
+\usepackage[hyperfootnotes=true, colorlinks=true]{hyperref}
+ \hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=black,
+	citecolor = black,      
+	urlcolor=cyan,
+}
+\usepackage{hyperendnotes}
+\usepackage{cleveref}
+
+
+\newcommand{\crefrangeconjunction}{--}
+\crefformat{tablerow}{#2#1#3}
+\crefmultiformat{tablerow}{#2#1#3}%
+{ و~#2#1#3}%
+{, #2#1#3}%
+{ و~#2#1#3}
+
+
+
+%\usepackage[style=ieee]{biblatex}
+%\bibliography{resources}
+
+%\doublespacing
+
+
+%\usepackage[top=29mm, bottom=29mm, left=19mm, right=19mm]{geometry}
+\usepackage[top=1.1in, bottom=1.1in, left=0.75in, right=0.75in]{geometry}
+
+\usepackage{xepersian}
+
+
+\newtheorem{definition}{تعريف}
+\newtheorem{theorem}{قضيه}
+\defpersianfont\keywordsfont[Scale=1.0]{B Nazanin}
+\defpersianfont\titlefont[Scale=1.1]{B Nazanin}
+\defpersianfont\titlelatinfont[Scale=1.0]{Times New Roman}
+\defpersianfont\secondtitlefont[Scale=1.0]{B Nazanin} %1.4
+\defpersianfont\secondtitlelatinfont[Scale=0.9]{Times New Roman}
+
+\settextfont[Scale=1.0]{B Nazanin}
+\setlatintextfont[Scale=0.9]{Times New Roman}
+%\setdigitfont[Scale=1]{XB Niloofar}
+%\setromantextfont[Scale=1.2]{XB Niloofar} 
+\defpersianfont\sectionsfont[Scale=1.0]{B Nazanin}
+\defpersianfont\captionsfont[Scale=1.0]{B Nazanin}
+
+
+
+\usepackage{sectsty}
+\allsectionsfont{\sectionsfont}
+
+
+\linespread{1} %line space
+%\setstretch{1}
+\small
+\setlength{\parindent}{5pt} %The indent of the paragraph first line
+\setlength{\parskip}{5pt} %Befor paragraph space
+
+\setlength{\columnsep}{6mm}
+%\let\footnote=\endnote
+\renewcommand{\notesname}{واژه‌نامه‌}
+\newcommand{\myitem}{\settextfont[Scale=0.9]{XB Niloofar}\item[\textbullet]\settextfont[Scale=1.0]{B Nazanin}}
+
+\renewcommand\refname{\rl{ منابع و مراجع}}
+
+\def\InE{\begingroup\beginL\latinfont}
+\def\EnE{\endL\endgroup} 
+\def\InF{\begingroup\beginR\persianfont}
+\def\EnF{\endR\endgroup}
+\newcommand{\IE}[1]{\lr{#1}}
+\newcommand{\IP}[1]{\rl{#1}} 
+\newcommand{\IF}[1]{\rl{#1}}
+\definecolor{ao(english)}{rgb}{0.0, 0.5, 0.0}
+\newcommand{\cmark}{\textcolor{ao(english)}{\ding{52}}}%
+\newcommand{\xmark}{\textcolor{red}{\ding{56}}}%
+
+\def\persiandash{\rl{-}}
+
+\newcommand{\efootnote}[1]{\endnote{\lr{#1}}}
+%\newcommand{\ecfootnote}[1]{}
+
+\let\oldemph=\emph
+\renewcommand{\emph}[1]{''\oldemph{#1}``}
+
+\let\oldcaption=\caption
+%\renewcommand{\caption}[1]{{\bf \captionsfont}}
+\captionsetup[figure]{labelfont={bf},textfont={bf},labelsep = colon,font=small}
+\captionsetup[table]{labelfont={bf},textfont={bf},labelsep = colon,font=small}
+%\renewcommand{\caption}[1]{{\captionsfont -\arabic{section}\oldcaption{}}}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+\renewcommand{\thefigure}{\arabic{section}-\arabic{figure}}
+\renewcommand{\thetable}{\arabic{section}-\arabic{table}}
+
+
+
+
+
+%\renewcommand{\thechapter}{\tartibi{chapter}}
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\arabic{section}-\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{section}-\arabic{subsection}-\arabic{subsubsection}}
+
+\newcommand{\authormajor}{معماری کامپیوتر} %گروه
+\newcommand{\thesistitlepersian}{مدیریت دما در سامانه‌های بحرانی-مختلط چندهسته‌ای تحمل‌پذیر اشکال}%عنوان فارسی
+\newcommand{\thesistitlelatin}{Thermal Management in Fault-Tolerant Mixed-Criticality Multicore Systems}%عنوان انگلیسی
+\newcommand{\authorname}{پوریا گوهری}%نام و نام‌خانوادگی
+\newcommand{\studentid}{9700000}%شماره دانشجویی
+
+
+\newcommand{\advisorprofname}{دکتر شاهین حسابی} %persian:   استاد راهنما
+\newcommand{\examinerprofname}{دکتر علیرضا اجلالی} %persian:   استاد ممتحن داخلي يا استاد مشاور
+
+\input{title}
+
+\begin{document} 
+\maketitle %صفحه‌ی ابتدایی
+
+\input{abstract}
+\input{Survey}
+\input{Solution}
+\input{Evalution}
+%\newline\newline
+
+\input{Conclusion}
+ 
+
+
+
+%=========== Regular chapters ===============
+%\cleardoublepage % terminates the current paragraph and page, the same way as a report document.
+%\setlength{\headsep}{0in}
+\setlatintextfont[Scale=0.7]{Times New Roman} 
+\linespread{0.65} %line space
+\renewcommand{\url}[1]{\underline{#1}}
+
+%\bibliographystyle{IEEEtran}
+%\bibliographystyle{is-unsrt}
+\bibliographystyle{ieeetr-fa}
+%\bibliographystyle{amsplain}
+
+
+\newpage
+\latin
+
+
+
+\persian
+%\setdigitfont[Scale=1]{B Nazanin}
+%\settextfont[Scale=1.0]{B Nazanin}
+\bibliography{resources}
+
+\linespread{1} %line space
+
+\newpage
+
+
+
+
+
+\setlatintextfont[Scale=0.9]{Times New Roman} 
+%\makeatletter
+%\renewcommand{\@seccntformat}[1]{}
+\makeatother
+%\renewcommand*{\notesname}{ ‌}
+
+\section*{واژه‌نامه}
+{
+	\renewcommand{\section}[2]{} % disable the automatic chapter
+	\begin{RTL}
+		\begin{multicols}{3}
+			\theendnotes
+		\end{multicols}
+	\end{RTL}
+}
+\end{document}
