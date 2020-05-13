@@ -1,4 +1,4 @@
-# SeminarTemplate
+# Seminar Template
 LaTex template for Sharif University of Technology Computer Architecture Group.
 This template uses the **XePersian** package and **B Nazanin** Font.
 
